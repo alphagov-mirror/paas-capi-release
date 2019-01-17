@@ -130,6 +130,7 @@ provides:
   - cc.database_encryption.keys
   - cc.db_encryption_key
   - cc.db_logging_level
+  - cc.default_app_ssh_access
   - cc.default_health_check_timeout
   - cc.default_stack
   - cc.droplets.blobstore_type
@@ -602,6 +603,14 @@ properties:
     description: "Key pair name for signed download URIs"
     default: ""
 
+  cc.opi.enabled:
+    description: "Enable the amazing eirini component"
+    default: false
+
+  cc.opi.url:
+    description: "Eirini Endpoint"
+    default: ""
+
   ccdb.databases:
     description: "Contains the name of the database on the database server"
   ccdb.roles:
@@ -978,6 +987,7 @@ properties:
     default:
       "buildpack/cflinuxfs2": "buildpack_app_lifecycle/buildpack_app_lifecycle.tgz"
       "buildpack/cflinuxfs3": "buildpack_app_lifecycle/buildpack_app_lifecycle.tgz"
+      "buildpack/windows": "buildpack_app_lifecycle/buildpack_app_lifecycle.tgz"
       "buildpack/windows2012R2": "windows_app_lifecycle/windows_app_lifecycle.tgz"
       "buildpack/windows2016": "buildpack_app_lifecycle/buildpack_app_lifecycle.tgz"
       "docker": "docker_app_lifecycle/docker_app_lifecycle.tgz"
